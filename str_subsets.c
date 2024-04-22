@@ -1,26 +1,30 @@
 #include <stdio.h>
 #include <string.h>
 
-void create_substrings(char *str, char *output, int start, int next) {
-  output[next] = '\0'; // Null-terminate current string
-
-  printf("%s\n", output); // Print the current string
-
-  if (start >= strlen(str)) // Base case: if start index exceeds string length
+// Function to recursively create substrings starting from each position in the
+// string.
+void create_substrings(char *str, int start, int length) {
+  if (start >= length)
     return;
 
-  // Include the next character and recurse
-  if (str[start] != '\0') {
-    output[next] = str[start]; // Set the next character in the output
-    create_substrings(str, output, start + 1, next + 1);
+  char output[length + 1];
+
+  for (int i = start + 1; i <= length; i++) {
+    memcpy(output, &str[start], i - start);
+    output[i - start] = '\0';
+    printf("%s\n", output);
   }
+
+  create_substrings(str, start + 1, length);
 }
 
 int main() {
-  char str[] = "abc"; // Input string
-  char output[6];     // Buffer to hold the current combination
+  char str[] = "abc";       // Input string
+  int length = strlen(str); // Calculate the length of the string
+  printf("%d\n", length);   // Removes the terminating char
 
-  create_substrings(str, output, 0, 0); // Start generating combinations
+  create_substrings(
+      str, 0, length); // Start generating substrings from the first position
 
   return 0;
 }
