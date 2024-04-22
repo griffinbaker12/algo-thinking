@@ -39,9 +39,9 @@ int main() {
     }
   }
 
-  char str1[] = "hello";
-  char str2[] = "hullo"; // Changed 'e' to 'u'
-                         //
+  char *str1 = "hello";
+  char *str2 = "hullo"; // Changed 'e' to 'u'
+                        //
   uint32_t og_hash = jenkins_one_at_a_time_hash((uint8_t *)str1, 5);
   uint32_t second_hash = jenkins_one_at_a_time_hash((uint8_t *)str2, 5);
 
