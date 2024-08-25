@@ -64,27 +64,6 @@ void add_to_hash_table(password_node *hash_table[], char *find) {
     printf("the total for %s is now: %d\n", find, password_ptr->total);
 }
 
-//
-// void add_to_hash_table(password_node *hash_table[],
-//                        char *find) {
-//   unsigned password_code;
-//   password_node *password_ptr;
-//   password_ptr = in_hash_table(hash_table, find);
-//   if (!password_ptr) {
-//     password_code = oaat(find, strlen(find), NUM_BITS);
-//     password_ptr = malloc(sizeof(password_node));
-//     if (password_ptr == NULL) {
-//       fprintf(stderr, "malloc error\n");
-//       exit(1);
-//     }
-//     strcpy(password_ptr->password, find);
-//     password_ptr->total = 0;
-//     password_ptr->next = hash_table[password_code];
-//     hash_table[password_code] = password_ptr;
-//   }
-//   password_ptr->total++;
-// }
-
 int already_added(char substrings[][MAX_PWD + 1], int total_substrings,
                   char *find) {
     for (int i = 0; i < total_substrings; i++) {
