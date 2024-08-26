@@ -3,10 +3,10 @@
 
 #define SIZE 100000
 
-typedef struct snowflake_node {
+struct snowflake_node {
     int snowflake[6];
     struct snowflake_node *next;
-} snowflake_node;
+};
 
 int get_code(int snowflake[]) {
     return (snowflake[0] + snowflake[1] + snowflake[2] + snowflake[3] +
