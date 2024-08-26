@@ -18,7 +18,7 @@ void solve(int lines[], int n, int m) {
     for (int i = 0; i < m; ++i) {
         idx_to_add = shortest_line_idx(lines, n);
         printf("%d\n", lines[idx_to_add]);
-        lines[idx_to_add] = lines[idx_to_add] + 1;
+        lines[idx_to_add]++;
     }
 }
 

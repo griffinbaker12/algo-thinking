@@ -1,10 +1,10 @@
-#include "common.h"
+#include <stdio.h>
+#include <string.h>
 
 #define MAX_USERS 100000
 #define MAX_PWD 10
 
-int main(void)
-{
+int main(void) {
     static char users[MAX_USERS][MAX_PWD + 1];
     int num_ops, op_type, total;
     char password[MAX_PWD + 1];
